@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smiley</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --face: #f5d742;
+        --face-dark: #e7c52d;
+        --eye: #1a1a1a;
+        --smile: #1a1a1a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+      }
+
+      .smiley {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        background: var(--face);
+        border: 6px solid var(--face-dark);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.02);
+      }
+
+      .smiley::before,
+      .smiley::after {
+        content: "";
+        position: absolute;
+        top: 52px;
+        width: 12px;
+        height: 12px;
+        background: var(--eye);
+        border-radius: 50%;
+      }
+
+      .smiley::before {
+        left: 42px;
+      }
+
+      .smiley::after {
+        right: 42px;
+      }
+
+      .smile {
+        position: absolute;
+        left: 50%;
+        bottom: 38px;
+        width: 88px;
+        height: 48px;
+        border-bottom: 8px solid var(--smile);
+        border-radius: 0 0 90px 90px;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="smiley" aria-label="smiley face">
+      <div class="smile" aria-hidden="true"></div>
+    </div>
+  </body>
+</html>
